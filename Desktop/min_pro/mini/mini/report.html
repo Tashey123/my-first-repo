@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Management Dashboard - Reports</title>
+    <link rel="stylesheet" href="/stylesheet/iterface.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="content">
+        <!-- Section: Welcome -->
+        <div id="welcome">
+            <h1>Welcome to the Inventory Status Dashboard</h1>
+            <p>Select an option from the sidebar to view details.</p>
+        </div>
+
+        <!-- Section: Report -->
+        <div id="report" class="hidden">
+            <h1>Generate Reports</h1>
+
+            <!-- Inventory Report -->
+            <div class="report-section">
+                <h2>Inventory Reports</h2>
+                <button onclick="generateReport('inventory')">Generate Inventory Report</button>
+            </div>
+
+            <!-- Order Report -->
+            <div class="report-section">
+                <h2>Order Reports</h2>
+                <button onclick="generateReport('order')">Generate Order Report</button>
+            </div>
+
+            <!-- Financial Report -->
+            <div class="report-section">
+                <h2>Financial Reports</h2>
+                <button onclick="generateReport('financial')">Generate Financial Report</button>
+            </div>
+
+            <!-- User Activity Report -->
+            <div class="report-section">
+                <h2>User Activity Reports</h2>
+                <button onclick="generateReport('userActivity')">Generate User Activity Report</button>
+            </div>
+
+            <!-- Export Reports -->
+            <div class="report-section">
+                <h2>Export Reports</h2>
+                <label for="exportType">Export as:</label>
+                <select id="exportType">
+                    <option value="pdf">PDF</option>
+                    <option value="excel">Excel</option>
+                </select>
+                <button onclick="exportReport()">Export Report</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventory Status Dashboard</title>
+  <link rel="stylesheet" href="/mini/mini/CSS/home2.css">
+  
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Inventory Status</h2>
+    <div class="nav-item" onclick="loadContent('department')">
+      <span>&#128100;</span> <!-- Icon -->
+      <button class="btn Department" onclick="window.location.href='dEPARTMENT.HTML';">Department</button>
+    </div>
+
+    <div class="nav-item" onclick="loadContent('price')">
+      <span>&#128178;</span>
+      <button class="btn status" onclick="window.location.href='price.html'">Price</button>
+    </div>
+    <div class="nav-item" onclick="loadContent('order')">
+      <span>&#128179;</span>
+      <button class="btn order" onclick="window.location.href='orderview.html'">order</button>
+    </div>
+    
+    <div class="nav-item" onclick="loadContent('user')">
+      <span>&#128110;</span>
+      <button class="btn User" onclick="window.location.href='user_management.html'">user</button>
+      
+    </div>
+   
+    <div class="nav-item" onclick="loadContent('management')">
+      <span>&#9989;</span>
+      <button class="btn manage" onclick="window.location.href='management.html'">Manage</button>
+      
+    </div>
+    <div class="nav-item" onclick="loadContent('interface')">
+      <span>&#128736;</span>
+      <button class="btn interface" onclick="window.location.href='interface.html'">Interface</button>
+    </div>
+    
+    <div class="nav-item" onclick="loadContent('report')">
+      <span>&#128202;</span>
+      
+      <button class="btn status" onclick="window.location.href='report.html'">Report</button>
+    </div>
+  </div>
+
+  <!-- Main Content Area -->
+  <div class="main-content">
+    <div id="content-display">
+      <h1>Welcome to the Inventory Status Dashboard</h1>
+      <p>Select an option from the sidebar to view details.</p>
+    </div>
+  </div>
+
+  <script src="/mini/mini/JS/home.js"></script>
+</body>
+</html>

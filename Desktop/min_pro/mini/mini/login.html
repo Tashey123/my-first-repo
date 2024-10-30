@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Inventory Management System</title>
+    <link rel="stylesheet" href=""> <!-- Link to your external CSS -->
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('/warehouse-inventory-management-hero-image.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Container Styles */
+        .container {
+            background-color: rgba(255, 255, 255, 0.9); /* White with transparency */
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            width: 400px; /* Fixed width */
+            text-align: center; /* Centered text */
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2.5em; /* Larger font size */
+        }
+
+        label {
+            display: block;
+            text-align: left; /* Left align labels */
+            margin: 10px 0 5px; /* Spacing */
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%; /* Full width */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px; /* Spacing between fields */
+            font-size: 1em; /* Font size */
+        }
+
+        button {
+            width: 100%; /* Full width button */
+            background-color: #28a745; /* Green background */
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em; /* Larger font size */
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Send background image to back */
+            opacity: 0.5; /* Make it slightly transparent */
+        }
+    </style>
+</head>
+<body>
+    <img class="background-image" src="/mini/mini/warehouse-inventory-management-hero-image.jpg" alt="Background Image">
+
+    <div class="container">
+        <form class="login-form">
+            <h1>Inventory Management System</h1>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="button" class="btn Login" onclick="window.location.href='home2.html';">Login</button>
+        </form>
+    </div>
+</body>
+</html>

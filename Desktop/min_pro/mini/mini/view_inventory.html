@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Inventory</title>
+    <style>
+        body {
+            display: flex;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #fff;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #1a1a1a;
+            height: 100vh;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar h2 {
+            color: #4CAF50;
+        }
+        .content {
+            padding: 20px;
+            width: 100%;
+        }
+        .inventory-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .inventory-table th, .inventory-table td {
+            border: 1px solid #333;
+            padding: 10px;
+            text-align: left;
+        }
+        .inventory-table th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .inventory-table tr:nth-child(even) {
+            background-color: #333;
+        }
+        .back-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .back-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>Inventory System</h2>
+    </div>
+
+    <div class="content">
+        <h2>View Inventory</h2>
+        <table class="inventory-table">
+            <thead>
+                <tr>
+                    <th>Item Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody id="inventoryTableBody">
+                <!-- Dynamic rows will be rendered here -->
+            </tbody>
+        </table>
+        
+        <!-- Back Button -->
+        <a href="manage_inventory.html" class="back-button">Back</a>
+    </div>
+
+    <script>
+        // Function to load and display inventory items from localStorage
+        function loadInventory() {
+            const inventoryTableBody = document.getElementById("inventoryTableBody");
+            const items = JSON.parse(localStorage.getItem("inventoryItems") || "[]");
+
+            inventoryTableBody.innerHTML = ""; // Clear previous items
+
+            items.forEach(item => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${item.itemName}</td>
+                    <td>${item.itemQuantity}</td>
+                    <td>${item.itemPrice}</td>
+                `;
+                inventoryTableBody.appendChild(row);
+            });
+        }
+
+        // Load inventory when the page loads
+        window.onload = loadInventory;
+    </script>
+</body>
+</html>

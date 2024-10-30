@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" href="/mini/mini/CSS/management.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>Inventory System</h2>
+        <button class="button" onclick="showDepartmentSelection()">Manage Inventory</button>
+    </div>
+
+    <div class="content">
+        <div class="container">
+            <!-- Department Selection Section -->
+            <div id="departmentSelection">
+                <h2>Select Department</h2>
+                <select id="departmentSelect">
+                    <option value="" disabled selected>Select a department</option>
+                    <option value="Department of Information Technology">Department of Information Technology</option>
+                    <option value="Department of Civil Engineering">Department of Civil Engineering</option>
+                    <option value="BE of Power">BE of Power</option>
+                </select>
+                <button class="button" onclick="navigateToInventory()">Continue</button>
+            </div>
+
+            <!-- Manage Inventory Section -->
+            <div id="manageInventory" class="hidden">
+                <h2>Manage Inventory for <span id="selectedDepartment"></span></h2>
+                <h3>Add Inventory</h3>
+                <input type="text" id="itemName" placeholder="Item Name" />
+                <input type="number" id="itemQuantity" placeholder="Quantity" />
+                <input type="number" id="itemPrice" placeholder="Price" />
+                <button class="button" onclick="addInventory()">Add Item</button>
+
+                <h3>Current Inventory</h3>
+                <table class="inventory-table">
+                    <thead>
+                        <tr>
+                            <th>Item Name</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="inventoryTableBody">
+                        <!-- Inventory items will be dynamically added here -->
+                    </tbody>
+                </table>
+
+                <a href="#" class="back-button" onclick="goBackToSelection()">Back</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="/mini/mini/JS/management.js"></script>
+
+</body>
+</html>

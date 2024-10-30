@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventory Order Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      color: #000;
+    }
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 180px;
+      height: 100%;
+      background-color: #000;
+      padding: 20px;
+      box-shadow: 3px 0 5px rgba(0, 0, 0, 0.5);
+    } 
+    .sidebar h2 {
+      color: #fff;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .nav-item {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      background-color: #222;
+      border-radius: 5px;
+    }
+    .nav-item span {
+      font-size: 24px;
+      margin-right: 10px;
+      color: #fff;
+    }
+    .nav-item p {
+      margin: 0;
+      color: #fff;
+    }
+    .nav-item:hover {
+      background-color: #333;
+    }
+    .main-content {
+      margin-left: 250px;
+      padding: 20px;
+    }
+    .content-box {
+      background-color: #f4f4f4;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
+      color: #000;
+    }
+    h1 {
+      font-size: 2rem;
+      color: #000;
+    }
+    button {
+      width: 100%;
+      padding: 15px;
+      margin: 10px 0;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #444;
+    }
+    table {
+      width: 100%;
+      margin-top: 20px;
+      color: #000;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border: 1px solid #000;
+    }
+    th {
+      background-color: #000;
+      color: #fff;
+    }
+    .confirm-btn, .cancel-btn {
+      padding: 10px 15px;
+      background-color: #000;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .confirm-btn:hover {
+      background-color: #444;
+    }
+    .cancel-btn:hover {
+      background-color: #888;
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Order Dashboard</h2>
+    <div class="nav-item" onclick="loadOrderPage()">
+      <span>&#128722;</span>
+      <p>Approve Orders</p>
+    </div>
+  </div>
+
+  <!-- Main Content Area -->
+  <div class="main-content">
+    <div id="content-display" class="content-box">
+      <h1>Welcome to the Order Approval Dashboard</h1>
+      <p>Select "Approve Orders" from the sidebar to proceed.</p>
+      <button onclick="window.location.href='place_order.html';">Orders</button>
+    </div>
+  </div>
+
+  <script>
+    function loadOrderPage() {
+      const orders = JSON.parse(localStorage.getItem('orders')) || [];
+
+      if (orders.length === 0) {
+        document.getElementById('content-display').innerHTML = '<h1>No orders to approve</h1>';
+        return;
+      }
+
+      let tableContent = orders.map((order, index) => `
+        <tr>
+          <td>${order.department}</td>
+          <td>${order.item}</td>
+          <td>${order.quantity}</td>
+          <td>
+            <button class="confirm-btn" onclick="confirmOrder(${index})">Confirm</button>
+            <button class="cancel-btn" onclick="cancelOrder(${index})">Cancel</button>
+          </td>
+        </tr>
+      `).join('');
+
+      document.getElementById('content-display').innerHTML = `
+        <h1>Approve Orders</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>Department Name</th>
+              <th>Item Name</th>
+              <th>Quantity</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="orderTable">
+            ${tableContent}
+          </tbody>
+        </table>
+      `;
+    }
+
+    function confirmOrder(index) {
+      let orders = JSON.parse(localStorage.getItem('orders'));
+      orders.splice(index, 1); // Remove the order after confirmation
+      localStorage.setItem('orders', JSON.stringify(orders));
+      alert('Order confirmed!');
+      loadOrderPage(); // Reload the order table
+    }
+
+    function cancelOrder(index) {
+      let orders = JSON.parse(localStorage.getItem('orders'));
+      orders.splice(index, 1); // Remove the order after cancellation
+      localStorage.setItem('orders', JSON.stringify(orders));
+      alert('Order canceled!');
+      loadOrderPage(); // Reload the order table
+    }
+  </script>
+</body>
+</html>
