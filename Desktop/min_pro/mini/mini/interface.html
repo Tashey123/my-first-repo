@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interface Customization</title>
-    <link rel="stylesheet" href="/stylesheet/inventory.css">
+    <title>Futuristic Color Themes</title>
     <style>
         /* Base Theme Styling */
         body {
@@ -12,74 +11,115 @@
             transition: background-color 0.3s, color 0.3s;
         }
 
-        /* Light theme */
-        body.light-theme {
-            background-color: #f5f5f5;
-            color: #333;
+        /* Futuristic Theme Styles */
+        /* Neon Blue Theme */
+        body.neon-blue-theme {
+            background-color: #00FFFF;
+            color: #FFFFFF;
         }
-        .sidebar.light-theme {
-            background-color: #ddd;
-            color: #333;
+        .sidebar.neon-blue-theme {
+            background-color: #007FFF;
+            color: #FFFFFF;
         }
 
-        /* Dark theme */
+        /* Light Blue Theme */
+        body.light-blue-theme {
+            background-color: #0099FF;
+            color: #FFFFFF;
+        }
+        .sidebar.light-blue-theme {
+            background-color: #005FCC;
+            color: #FFFFFF;
+        }
+
+        /* Deep Blue Theme */
+        body.deep-blue-theme {
+            background-color: #1C1CF0;
+            color: #FFFFFF;
+        }
+        .sidebar.deep-blue-theme {
+            background-color: #0B0B61;
+            color: #FFFFFF;
+        }
+
+        /* Electric Purple Theme */
+        body.electric-purple-theme {
+            background-color: #9C27B0;
+            color: #FFFFFF;
+        }
+        .sidebar.electric-purple-theme {
+            background-color: #7B1FA2;
+            color: #FFFFFF;
+        }
+
+        /* Neon Pink Theme */
+        body.neon-pink-theme {
+            background-color: #FF007F;
+            color: #FFFFFF;
+        }
+        .sidebar.neon-pink-theme {
+            background-color: #C60055;
+            color: #FFFFFF;
+        }
+
+        /* Violet Theme */
+        body.violet-theme {
+            background-color: #6A0DAD;
+            color: #FFFFFF;
+        }
+        .sidebar.violet-theme {
+            background-color: #4B0082;
+            color: #FFFFFF;
+        }
+
+        /* Dark Theme */
         body.dark-theme {
-            background-color: #333;
-            color: #ddd;
+            background-color: #121212;
+            color: #E0E0E0;
         }
         .sidebar.dark-theme {
-            background-color: #222;
-            color: #ddd;
+            background-color: #1F1F1F;
+            color: #FFFFFF;
         }
 
-        /* Forest theme */
-        body.forest-theme {
-            background-color: #eaf4ea;
-            color: #2b2d42;
+        /* Futuristic Green Theme */
+        body.futuristic-green-theme {
+            background-color: #00FF6A;
+            color: #FFFFFF;
         }
-        .sidebar.forest-theme {
-            background-color: #4caf50;
-            color: #ffffff;
-        }
-
-        /* Ocean theme */
-        body.ocean-theme {
-            background-color: #e0f7fa;
-            color: #01579b;
-        }
-        .sidebar.ocean-theme {
-            background-color: #0288d1;
-            color: #fff;
+        .sidebar.futuristic-green-theme {
+            background-color: #007F4E;
+            color: #FFFFFF;
         }
 
-        /* Sunset theme */
-        body.sunset-theme {
-            background-color: #ffe0b2;
-            color: #bf360c;
+        /* Magenta Theme */
+        body.magenta-theme {
+            background-color: #FF00FF;
+            color: #FFFFFF;
         }
-        .sidebar.sunset-theme {
-            background-color: #ff7043;
-            color: #fff;
-        }
-
-        /* Lavender theme */
-        body.lavender-theme {
-            background-color: #e6e6fa;
-            color: #4b0082;
-        }
-        .sidebar.lavender-theme {
-            background-color: #7b68ee;
-            color: #fff;
+        .sidebar.magenta-theme {
+            background-color: #990099;
+            color: #FFFFFF;
         }
 
-        /* Midnight theme */
-        body.midnight-theme {
-            background-color: #1a1a40;
-            color: #a3a3c2;
+        /* Sunset Orange Theme */
+        body.sunset-orange-theme {
+            background-color: #FF4500;
+            color: #FFFFFF;
         }
-        .sidebar.midnight-theme {
-            background-color: #2c2c54;
-            color: #a3a3c2;
+        .sidebar.sunset-orange-theme {
+            background-color: #A32900;
+            color: #FFFFFF;
+        }
+
+        /* Cyber Yellow Theme */
+        body.cyber-yellow-theme {
+            background-color: #FFD300;
+            color: #000000;
+        }
+        .sidebar.cyber-yellow-theme {
+            background-color: #BDA400;
+            color: #FFFFFF;
         }
 
         /* Sidebar and Container */
@@ -124,38 +164,53 @@
             transition: color 0.3s;
         }
 
-        /* Theme selector squares */
+        /* Theme selector circles */
         .theme-selector {
             display: flex;
             gap: 15px;
             margin-top: 20px;
+            flex-wrap: wrap;
         }
 
-        .theme-square {
+        .theme-circle {
             width: 60px;
             height: 60px;
-            border-radius: 8px;
+            border-radius: 50%;
             cursor: pointer;
             transition: transform 0.2s;
         }
 
-        .theme-square:hover {
+        .theme-circle:hover {
             transform: scale(1.1);
         }
 
-        /* Square theme colors */
-        .theme-square.light { background-color: #f5f5f5; border: 1px solid #ccc; }
-        .theme-square.dark { background-color: #333; }
-        .theme-square.forest { background-color: #4caf50; }
-        .theme-square.ocean { background-color: #00bcd4; }
-        .theme-square.sunset { background-color: #ff7043; }
-        .theme-square.lavender { background-color: #b39ddb; }
-        .theme-square.midnight { background-color: #2c2c54; }
+        /* Circle theme colors */
+        .theme-circle.neon-blue { background-color: #00FFFF; }
+        .theme-circle.light-blue { background-color: #0099FF; }
+        .theme-circle.deep-blue { background-color: #1C1CF0; }
+        .theme-circle.electric-purple { background-color: #9C27B0; }
+        .theme-circle.neon-pink { background-color: #FF007F; }
+        .theme-circle.violet { background-color: #6A0DAD; }
+        .theme-circle.dark { background-color: #121212; }
+        .theme-circle.futuristic-green { background-color: #00FF6A; }
+        .theme-circle.magenta { background-color: #FF00FF; }
+        .theme-circle.sunset-orange { background-color: #FF4500; }
+        .theme-circle.cyber-yellow { background-color: #FFD300; }
+
+        .button {
+        padding: 10px 20px;
+        margin-top: 20px;
+        background-color: #6f7d8b;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        }
     </style>
 </head>
-<body class="light-theme">
+<body class="neon-blue-theme">
     <div class="container">
-        <aside class="sidebar light-theme">
+        <aside class="sidebar neon-blue-theme">
             <h2>Inventory Dashboard</h2>
             <ul>
                 <li><i class="fas fa-building"></i><a href="dashboard.html"> Department</a></li>
@@ -171,17 +226,22 @@
         
         <main class="main-content">
             <h1>Customize the Interface</h1>
-            <p>Select a theme by clicking one of the squares below:</p>
+            <p>Select a theme by clicking one of the circles below:</p>
             <div class="theme-selector">
-                <div class="theme-square light" onclick="switchTheme('light')" title="Light Theme"></div>
-                <div class="theme-square dark" onclick="switchTheme('dark')" title="Dark Theme"></div>
-                <div class="theme-square forest" onclick="switchTheme('forest')" title="Forest Theme"></div>
-                <div class="theme-square ocean" onclick="switchTheme('ocean')" title="Ocean Theme"></div>
-                <div class="theme-square sunset" onclick="switchTheme('sunset')" title="Sunset Theme"></div>
-                <div class="theme-square lavender" onclick="switchTheme('lavender')" title="Lavender Theme"></div>
-                <div class="theme-square midnight" onclick="switchTheme('midnight')" title="Midnight Theme"></div>
+                <div class="theme-circle neon-blue" onclick="switchTheme('neon-blue')" title="Neon Blue Theme"></div>
+                <div class="theme-circle light-blue" onclick="switchTheme('light-blue')" title="Light Blue Theme"></div>
+                <div class="theme-circle deep-blue" onclick="switchTheme('deep-blue')" title="Deep Blue Theme"></div>
+                <div class="theme-circle electric-purple" onclick="switchTheme('electric-purple')" title="Electric Purple Theme"></div>
+                <div class="theme-circle neon-pink" onclick="switchTheme('neon-pink')" title="Neon Pink Theme"></div>
+                <div class="theme-circle violet" onclick="switchTheme('violet')" title="Violet Theme"></div>
+                <div class="theme-circle dark" onclick="switchTheme('dark')" title="Dark Theme"></div>
+                <div class="theme-circle futuristic-green" onclick="switchTheme('futuristic-green')" title="Futuristic Green Theme"></div>
+                <div class="theme-circle magenta" onclick="switchTheme('magenta')" title="Magenta Theme"></div>
+                <div class="theme-circle sunset-orange" onclick="switchTheme('sunset-orange')" title="Sunset Orange Theme"></div>
+                <div class="theme-circle cyber-yellow" onclick="switchTheme('cyber-yellow')" title="Cyber Yellow Theme"></div>
             </div>
         </main>
+        <button class="button" onclick="location.href='home2.html'">Back</button>
     </div>
     
     <script>

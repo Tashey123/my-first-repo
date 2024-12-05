@@ -1,7 +1,7 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #121212;
-  color: #fff;
+  background-color: #abc7ca;
+  color: #000000;
   margin: 0;
   padding: 0;
 }
@@ -17,10 +17,10 @@ body {
   float: left;
 }
 .sidebar h2 {
-  color: #4CAF50;
+  color: #fafdfa;
 }
 .sidebar .button {
-  background-color: #4CAF50;
+  background-color: #656b65;
   color: white;
   padding: 10px;
   border: none;
@@ -30,7 +30,7 @@ body {
   margin: 10px 0;
 }
 .sidebar .button:hover {
-  background-color: #45a049;
+  background-color: #a4afa4;
 }
 .content {
   padding: 20px;
@@ -39,12 +39,12 @@ body {
 select, input {
   padding: 10px;
   margin: 10px 0;
-  border: 1px solid #4CAF50;
+  border: 1px solid #626b63;
   border-radius: 5px;
   width: calc(100% - 22px);
 }
 .button {
-  background-color: #4CAF50;
+  background-color: #272b27;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -52,7 +52,7 @@ select, input {
   cursor: pointer;
 }
 .button:hover {
-  background-color: #45a049;
+  background-color: #273438;
 }
 .inventory-table {
   width: 100%;
@@ -65,16 +65,16 @@ select, input {
   text-align: left;
 }
 .inventory-table th {
-  background-color: #4CAF50;
-  color: white;
+  background-color: #4c534c;
+  color: rgb(236, 227, 227);
 }
 .inventory-table tr:nth-child(even) {
-  background-color: #333;
+  background-color: #665d5d;
 }
 .back-button {
   margin-top: 20px;
   padding: 10px 20px;
-  background-color: #4CAF50;
+  background-color: #4b4e4b;
   color: white;
   text-decoration: none;
   border-radius: 5px;
@@ -85,4 +85,13 @@ select, input {
 }
 .hidden {
   display: none;
+}
+.container-box {
+    width: 80%; /* Adjust width as needed */
+    margin: 0 auto; /* Centers the box horizontally */
+    padding: 20px; /* Adds padding inside the box */
+    background-color: #a39c9c86; /* Background color of the box */
+    border: 1px solid #aca8a8; /* Light border around the box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds subtle shadow */
 }

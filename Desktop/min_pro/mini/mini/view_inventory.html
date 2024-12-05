@@ -9,8 +9,8 @@
             display: flex;
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #121212;
-            color: #fff;
+            background-color: #abc7ca;
+            color: #ffffff;
         }
         .sidebar {
             width: 250px;
@@ -20,11 +20,19 @@
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
         }
         .sidebar h2 {
-            color: #4CAF50;
+            color: #fdfdfd;
         }
         .content {
             padding: 20px;
             width: 100%;
+        }
+        .container-box { /* The container style */
+            width: 80%; /* Adjust the width of the container */
+            margin: 0 auto; /* Center the container */
+            padding: 20px; /* Add padding inside the container */
+            background-color: #0000006e; /* White background for the content */
+            border-radius: 10px; /* Optional rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional box shadow */
         }
         .inventory-table {
             width: 100%;
@@ -37,8 +45,8 @@
             text-align: left;
         }
         .inventory-table th {
-            background-color: #4CAF50;
-            color: white;
+            background-color: #504f4f;
+            color: rgb(255, 255, 255);
         }
         .inventory-table tr:nth-child(even) {
             background-color: #333;
@@ -46,14 +54,14 @@
         .back-button {
             margin-top: 20px;
             padding: 10px 20px;
-            background-color: #4CAF50;
+            background-color: #4e4d4d;
             color: white;
             text-decoration: none;
             border-radius: 5px;
             display: inline-block;
         }
         .back-button:hover {
-            background-color: #45a049;
+            background-color: #6b5252;
         }
     </style>
 </head>
@@ -64,22 +72,25 @@
     </div>
 
     <div class="content">
-        <h2>View Inventory</h2>
-        <table class="inventory-table">
-            <thead>
-                <tr>
-                    <th>Item Name</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                </tr>
-            </thead>
-            <tbody id="inventoryTableBody">
-                <!-- Dynamic rows will be rendered here -->
-            </tbody>
-        </table>
-        
-        <!-- Back Button -->
-        <a href="manage_inventory.html" class="back-button">Back</a>
+        <!-- The container-box wrapping the content -->
+        <div class="container-box">
+            <h2>View Inventory</h2>
+            <table class="inventory-table">
+                <thead>
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody id="inventoryTableBody">
+                    <!-- Dynamic rows will be rendered here -->
+                </tbody>
+            </table>
+            
+            <!-- Back Button -->
+            <a href="dEPARTMENT.HTML" class="back-button">Back</a>
+        </div>
     </div>
 
     <script>

@@ -55,7 +55,7 @@
   .main-content {
     flex-grow: 1;
     padding: 40px;
-    background-color: #f2f2f2;
+    background-color: #abc7ca;
   }
   
   #content-display h1 {
@@ -88,4 +88,52 @@
   background-color: #444; /* Change background color on hover */
 }
 
-  
+  /* Notification Bar Style */
+.notification-bar {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Make sure the notification bar is above other content */
+}
+
+.notification-icon {
+  padding: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  color: #333;
+}
+
+.notification-dropdown {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  width: 200px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.notification-dropdown ul {
+  list-style-type: none;
+  padding: 10px;
+  margin: 0;
+}
+
+.notification-dropdown li {
+  padding: 8px 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.notification-dropdown li:last-child {
+  border-bottom: none;
+}
+
+.notification-bar:hover .notification-dropdown {
+  display: block;
+}

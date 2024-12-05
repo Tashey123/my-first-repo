@@ -10,7 +10,7 @@
 body {
   display: flex;
   height: 100vh;
-  background: #f0f2f5;
+  background-color: #abc7ca;
   overflow: hidden;
 }
 

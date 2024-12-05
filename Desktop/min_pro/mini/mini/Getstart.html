@@ -3,19 +3,90 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JNEC Department Inventory</title>
-  <link rel="stylesheet" href="/lets go new project/CSS/stylesheet.css">
+  <title>Button Hover Effect</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: white;
+      flex-direction: column;
+      background-image: url('2-980x551.jpg'); /* Set image as background */
+      background-size: cover; /* Ensure the image covers the full screen */
+      background-position: center; /* Center the background image */
+      background-attachment: fixed; /* Make the background image fixed while scrolling */
+      image-rendering: auto;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+      border-radius: 20px;
+      padding: 60px;
+      width: 500px; /* Reduced width for the button */
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+      flex-direction: column;
+    }
+
+    /* New "Get Started" button style */
+    .button {
+      display: inline-block;
+      padding: 18px 36px; /* Increased padding for larger button */
+      background: linear-gradient(to right, #f58c1f, #ff9800); /* Gradient background */
+      color: #fff;
+      border-radius: 10px;
+      text-decoration: none;
+      margin: 20px 0; /* Increased margin around the button */
+      font-size: 22px; /* Larger font size */
+      font-weight: bold;
+      text-transform: uppercase; /* Make text uppercase */
+      transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow to button */
+    }
+
+    /* Hover effect on the "Get Started" button */
+    .button:hover {
+      background: linear-gradient(to right, #ff9800, #f58c1f); /* Inverse gradient on hover */
+      transform: scale(1.1); /* Slightly grow the button */
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+    }
+
+    /* Back Icon Style */
+    .back-icon {
+      font-size: 40px; /* Icon size */
+      color: rgb(0, 0, 0);
+      margin-top: 30px;
+      cursor: pointer; /* Makes the icon clickable */
+      transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    }
+
+    .back-icon:hover {
+      color: rgb(214, 203, 203); /* Change icon color on hover */
+      transform: scale(1.1); /* Slightly scale up the icon */
+    }
+
+    /* Optional: Add some styles for better text on the container */
+    h1 {
+      color: #fff;
+      font-family: 'Arial', sans-serif;
+      margin-bottom: 30px;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <h1>JNEC Department Inventory System</h1>
-    <button id="getStarted">Get Started</button>
+    <h1>JENPA-LEKSO DIMS NALU</h1>
+
+    <!-- Get Started Button -->
+    <a href="selection.html" class="button">Get Started</a>
   </div>
 
-  <script>
-    document.getElementById("getStarted").addEventListener("click", function() {
-      window.location.href = "login.html";
-    });
-  </script>
 </body>
 </html>
