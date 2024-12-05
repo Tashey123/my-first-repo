@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button Hover Effect</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #d6b26e, #2e9ba3); /* Gradient background */
+      background-size: cover;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: white;
+      flex-direction: column;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+      border-radius: 20px;
+      padding: 60px;
+      width: 1000px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+      flex-direction: column;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 20px 40px; /* Increased padding for bigger buttons */
+      background: linear-gradient(to right, #37696d, #005cbf); /* Gradient background */
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      margin: 15px 0; /* Increased margin between buttons */
+      font-size: 24px; /* Increased font size */
+      transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    }
+
+    .button:hover {
+      background: linear-gradient(to right, #005cbf, #007bff); /* Inverse gradient on hover */
+      transform: scale(1.1); /* Slightly increased scaling effect */
+    }
+
+    /* Back Button Style */
+    .back-button {
+      background: none;
+      border: none;
+      color: rgb(0, 0, 0);
+      font-size: 40px; /* Icon size */
+      margin-top: 30px;
+      cursor: pointer; /* Makes the button clickable */
+      transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    }
+
+    .back-button:hover {
+      color: rgb(214, 203, 203); /* Change icon color on hover */
+      transform: scale(1.1);
+    }
+
+    /* Optional: Add some styles for better text on the container */
+    h1 {
+      color: #fff;
+      font-family: 'Arial', sans-serif;
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <a href="login.html" class="button">LRC</a>
+    <a href="login2.html" class="button">Staff</a>
+  </div>
+
+  <!-- Back Button using button tag -->
+  <button class="back-button" onclick="window.history.back()">
+    <i class="fas fa-arrow-left"></i> <!-- Font Awesome left arrow icon -->
+  </button>
+
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+    <link rel="stylesheet" href="/mini/mini/CSS/user.css">
+    <style>
+        /* Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 180px;
+            height: 100%;
+            background-color: #000;
+            padding: 20px;
+            box-shadow: 3px 0 5px rgba(0, 0, 0, 0.5);
+            color: #fff;
+        }
+        .sidebar h2 {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .container {
+            margin-left: 200px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Inventory Status</h2>
+        <p>Manage Users</p>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="container">
+        <h1>User Management</h1>
+        
+        <!-- Search Bar -->
+        <input type="text" id="searchBar" placeholder="Search users..." onkeyup="searchUsers()">
+
+        <!-- Add User Button (only Admin can add) -->
+        <button id="addUserBtn" onclick="openAddUserModal()">Add New User</button>
+
+        <!-- User List Table -->
+        <table id="userTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="userTableBody">
+                <!-- User data will be dynamically populated here -->
+            </tbody>
+        </table>
+        <button class="button" onclick="location.href='home2.html'">Back</button>
+    </div>
+
+    <!-- Modal for Adding/Editing Users -->
+    <div id="userModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeUserModal()">&times;</span>
+            <h2 id="modalTitle">Add User</h2>
+            <form id="userForm" onsubmit="addUser(event)">
+                <input type="text" id="userName" placeholder="Full Name" required>
+                <input type="email" id="userEmail" placeholder="Email" required>
+                <input type="text" id="userRole" placeholder="Staff">
+                
+                <select id="userStatus">
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                </select>
+                <button type="submit" id="saveUserBtn">Save User</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="/mini/mini/JS/user.js"></script>
+    <script>
+        // Initialize an empty user list
+        let users = [];
+
+        function renderUsers() {
+            const userTableBody = document.getElementById('userTableBody');
+            userTableBody.innerHTML = ''; // Clear existing rows
+            users.forEach((user, index) => {
+                if (user.addedByAdmin) {
+                    const row = `<tr>
+                        <td>${user.name}</td>
+                        <td>${user.email}</td>
+                        <td>${user.role}</td>
+                        <td>${user.status}</td>
+                        <td>
+                            <button onclick="removeUser(${index})">Remove</button>
+                        </td>
+                    </tr>`;
+                    userTableBody.innerHTML += row;
+                }
+            });
+        }
+
+        function openAddUserModal() {
+            document.getElementById('userModal').style.display = 'block';
+        }
+
+        function closeUserModal() {
+            document.getElementById('userModal').style.display = 'none';
+        }
+
+        function addUser(event) {
+            event.preventDefault();
+            const name = document.getElementById('userName').value;
+            const email = document.getElementById('userEmail').value;
+            const role = document.getElementById('userRole').value;
+            const status = document.getElementById('userStatus').value;
+            
+            const newUser = { name, email, role, status, addedByAdmin: true };
+            users.push(newUser);
+            renderUsers();
+            closeUserModal();
+        }
+
+        function removeUser(index) {
+            users.splice(index, 1);
+            renderUsers();
+        }
+
+        function searchUsers() {
+            const filter = document.getElementById('searchBar').value.toLowerCase();
+            const rows = document.querySelectorAll('#userTable tbody tr');
+            rows.forEach(row => {
+                const userName = row.cells[0].textContent.toLowerCase();
+                row.style.display = userName.includes(filter) ? '' : 'none';
+            });
+        }
+
+        // Initial render
+        renderUsers();
+    </script>
+</body>
+</html>

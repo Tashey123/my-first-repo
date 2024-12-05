@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Place Order</title>
+  <link rel="stylesheet" href="/mini/mini/CSS/order.css">
+  <style>
+    /* Sidebar Styles */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 180px;
+      height: 100%;
+      background-color: #000;
+      padding: 20px;
+      box-shadow: 3px 0 5px rgba(0, 0, 0, 0.5);
+      color: #fff;
+    }
+    .sidebar h2 {
+      color: #fff;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    /* Centered container */
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin-left: 200px; /* To offset the sidebar */
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      width: 900px; /* Set the width to 900px to make the container larger */
+      padding: 50px; /* Increased padding for more space inside */
+      background-color: #e9dede;
+      border-radius: 8px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 30px; /* Increased margin for a bit more space */
+    }
+
+    label, input, button {
+      display: block;
+      width: 100%;
+      margin: 15px 0; /* Added a bit more margin between fields */
+    }
+
+    button {
+      padding: 15px; /* Increased padding for buttons */
+      background-color: #000;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #444;
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Inventory Status</h2>
+  </div>
+
+  <!-- Centered Container -->
+  <div class="container">
+    <h1>Place Order</h1>
+    <label for="department">Department:</label>
+    <input type="text" id="department" placeholder="Enter Department">
+
+    <label for="item">Item:</label>
+    <input type="text" id="item" placeholder="Enter Item Name" />
+
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" placeholder="Enter Quantity" />
+
+    <button onclick="placeOrder()">Place Order</button>
+    
+    <button class="button" onclick="location.href='dEPARTMENT.HTML'">Back</button> <!-- Back Button -->
+    
+  </div>
+
+  <script src="/mini/mini/JS/order.js"></script>
+  <script>
+    function goBack() {
+      // Replace this with the actual link to the previous page or logic
+      window.history.back(); // This will take the user back to the previous page
+      // Alternatively, you can use:
+      // window.location.href = 'previous_page.html'; // specify your previous page URL
+    }
+  </script>
+</body>
+</html>

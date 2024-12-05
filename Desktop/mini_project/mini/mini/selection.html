@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button Hover Effect</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #d6b26e, #2e9ba3); /* Gradient background */
+      background-size: cover;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: white;
+      flex-direction: column;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+      border-radius: 20px;
+      padding: 60px;
+      width: 500px; /* Reduced width for dropdown */
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+      flex-direction: column;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 15px 30px; /* Smaller padding for a smaller button */
+      background: linear-gradient(to right, #37696d, #005cbf); /* Gradient background */
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      margin: 15px 0; /* Increased margin between buttons */
+      font-size: 18px; /* Smaller font size */
+      transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    }
+
+    .button:hover {
+      background: linear-gradient(to right, #005cbf, #007bff); /* Inverse gradient on hover */
+      transform: scale(1.05); /* Slightly smaller scaling effect */
+    }
+
+    /* Dropdown Style */
+    select {
+      font-size: 20px;
+      padding: 10px;
+      background-color: #37696d;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      width: 100%;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    select:hover {
+      background-color: #005cbf;
+    }
+
+    /* Back Icon Style */
+    .back-icon {
+      font-size: 40px; /* Icon size */
+      color: rgb(0, 0, 0);
+      margin-top: 30px;
+      cursor: pointer; /* Makes the icon clickable */
+      transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    }
+
+    .back-icon:hover {
+      color: rgb(214, 203, 203); /* Change icon color on hover */
+      transform: scale(1.1);
+    }
+
+    /* Optional: Add some styles for better text on the container */
+    h1 {
+      color: #fff;
+      font-family: 'Arial', sans-serif;
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Department</h1>
+    
+    
+    <!-- Dropdown for Department Selection -->
+    <select>
+      <option value="DIT">Department of Information Technology</option>
+      <option value="DEEE">Department of Electrical and Electronic Engineering</option>
+      <option value="DCES">Department of Civil Engineering and Surving</option>
+      <option value="DME">Department oF Mechanical Engineering</option>
+      <option value="DHM">Department of Humanities and Management</option>
+    </select>
+    <!-- Done Button -->
+    <a href="LRC Button.html" class="button">Done</a>
+    
+  </div>
+
+  <!-- Back Icon below the container -->
+  <a href="javascript:history.back()" class="back-icon">
+    <i class="fas fa-arrow-left"></i> <!-- Font Awesome left arrow icon -->
+  </a>
+
+</body>
+</html>
